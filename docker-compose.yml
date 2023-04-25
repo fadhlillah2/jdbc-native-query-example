@@ -1,0 +1,23 @@
+\version: '3.8'
+
+networks:
+  postgresql:
+    driver: bridge
+
+services:
+  postgresql-db:
+    container_name: postgresql-db
+    image: postgres:latest
+    hostname: postgresql
+    networks:
+      - postgresql
+    environment:
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=12345678
+      - POSTGRES_DB=pantek
+    ports:
+      - 5435:5432
+    volumes:
+      - user_db:/var/lib/postgresql/data
+volumes:
+  user_db:
