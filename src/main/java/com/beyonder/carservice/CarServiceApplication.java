@@ -21,9 +21,9 @@ public class CarServiceApplication {
     public String test() {
         try {
             Class.forName("org.postgresql.Driver");
-            String url = "jdbc:postgresql://localhost:5435/root";
-            String username = "root";
-            String password = "12345678";
+            String url = "jdbc:postgresql://localhost:5435/userdb";
+            String username = "uroot";
+            String password = "qwertyui";
             Connection conn = DriverManager.getConnection(url, username, password);
             Statement stmt = conn.createStatement();
             String sql = "SELECT * FROM accounts";

@@ -1,5 +1,13 @@
 psql -U root
 
+#or
+
+psql -U root -l
+
+###
+
+psql -U root -d <database>
+
 ###
 
 \l
@@ -30,8 +38,8 @@ https://www.postgresqltutorial.com/postgresql-tutorial/postgresql-create-table/
 ### insert multiple data row
 
 INSERT INTO
-    links (url, name)
+    accounts (user_id, username)
 VALUES
-    ('https://www.google.com','Google'),
-    ('https://www.yahoo.com','Yahoo'),
-    ('https://www.bing.com','Bing');
+    (1,'Google'),
+    (2,'Yahoo'),
+    (3,'Bing');
