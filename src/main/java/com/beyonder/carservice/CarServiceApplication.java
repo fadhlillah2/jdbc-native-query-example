@@ -26,14 +26,17 @@ public class CarServiceApplication {
             String password = "qwertyui";
             Connection conn = DriverManager.getConnection(url, username, password);
             Statement stmt = conn.createStatement();
-            String sql = "SELECT * FROM accounts";
+            String sql = "SELECT * \n" +
+                    "FROM accounts s\n" +
+                    "JOIN users u ON s.user_id = u.user_id;";
             ResultSet rs = stmt.executeQuery(sql);
             while (rs.next()) {
                 // process each row
                 long userId = rs.getLong("user_id");
                 String userName = rs.getString("username");
+                String role = rs.getString("role");
                 // retrieve other columns
-                System.out.println(userId + "\t" + userName);
+                System.out.println(userId+ "\t" + userName+ "\t" + role);
             }
             rs.close();
             stmt.close();
