@@ -2,11 +2,16 @@ psql -U root
 
 #or
 
+### to check list of database
 psql -U root -l
 
-###
 
-psql -U root -d <database>
+### login first to postgres
+psql -U root -d postgres
+
+### and then u can create database
+CREATE DATABASE ecommerce;
+
 
 ###
 
