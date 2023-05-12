@@ -1,18 +1,12 @@
 package com.beyonder.carservice.Testing;
-
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.List;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
 import java.util.List;
 import java.util.Map;
 
@@ -59,7 +53,10 @@ class Sol1 {
 //
                 ObjectMapper mapper = new ObjectMapper();
                 Map<String, Object> map = mapper.readValue(response.toString(), new TypeReference<Map<String, Object>>() {});
-                System.out.println(map.get("data"));
+                List<Map<String, Object>> dataList = (List<Map<String, Object>>) map.get("data");
+                for (Map<String, Object> data : dataList) {
+                    System.out.println(data.get("title"));
+                }
 
             } else {
                 System.out.println("Get Request failed");
