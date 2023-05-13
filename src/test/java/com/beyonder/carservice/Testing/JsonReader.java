@@ -34,9 +34,9 @@ public class JsonReader {
         }
     }
 
-    public static void main(String[] args) throws IOException, JSONException {
-        JSONObject json = readJsonFromUrl("https://jsonmock.hackerrank.com/api/articles?author=epaga");
-        System.out.println(json.toString());
-        System.out.println(json.get("data"));
-    }
+//    public static void main(String[] args) throws IOException, JSONException {
+//        JSONObject json = readJsonFromUrl("https://jsonmock.hackerrank.com/api/articles?author=epaga");
+//        System.out.println(json.toString());
+//        System.out.println(json.get("data"));
+//    }
 }
