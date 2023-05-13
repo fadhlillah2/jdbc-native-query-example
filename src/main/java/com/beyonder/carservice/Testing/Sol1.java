@@ -71,22 +71,3 @@ class Sol1 {
 
 }
 
-//class Solution {
-//    public static void main(String[] args) throws IOException {
-//        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-//        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(System.getenv("OUTPUT_PATH")));
-//
-//        String author = bufferedReader.readLine();
-//
-//        List<String> result = Result.getAuthorHistory(author);
-//
-//        bufferedWriter.write(
-//                result.stream()
-//                        .collect(joining("\n"))
-//                        + "\n"
-//        );
-//
-//        bufferedReader.close();
-//        bufferedWriter.close();
-//    }
-//}
