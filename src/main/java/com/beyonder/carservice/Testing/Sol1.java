@@ -30,6 +30,7 @@ class Sol1 {
         getAuthorHistory("ega");
     }
 
+
     public static List<String> getAuthorHistory(String author) {
         try{
 

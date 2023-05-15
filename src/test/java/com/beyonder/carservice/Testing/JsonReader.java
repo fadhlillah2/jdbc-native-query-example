@@ -7,7 +7,9 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.net.URL;
 import java.nio.charset.Charset;
+import java.util.Map;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -34,9 +36,23 @@ public class JsonReader {
         }
     }
 
-//    public static void main(String[] args) throws IOException, JSONException {
-//        JSONObject json = readJsonFromUrl("https://jsonmock.hackerrank.com/api/articles?author=epaga");
+    public static void main(String[] args) throws IOException, JSONException {
+        JSONObject json = readJsonFromUrl("https://jsonmock.hackerrank.com/api/articles?author=epaga");
+
 //        System.out.println(json.toString());
-//        System.out.println(json.get("data"));
-//    }
+//
+        System.out.println(json.get("data"));
+
+        JSONArray jsonArray = new JSONArray(json.get("data"));
+
+        for (int i = 0; i < jsonArray.length(); i++) {
+            JSONObject jsonObject = jsonArray.getJSONObject(i);
+
+//            System.out.println("Author: " + jsonObject.getString("author"));
+//            System.out.println("Title: " + jsonObject.getString("title"));
+//            System.out.println("URL: " + jsonObject.getString("url"));
+            System.out.println("----------------------");
+        }
+
+    }
 }
